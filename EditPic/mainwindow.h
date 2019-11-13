@@ -20,7 +20,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void            recvShowPicSignal(QImage image);
+    void recvShowPicSignal(QImage image);
 private slots:
     void on_pushButton_open_clicked();
 

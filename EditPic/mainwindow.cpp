@@ -21,6 +21,9 @@ void MainWindow::recvShowPicSignal(QImage image)
 {
     QPixmap ConvertPixmap=QPixmap::fromImage(image);//The QPixmap class is an off-screen image representation that can be used as a paint device
     QGraphicsScene  *qgraphicsScene = new QGraphicsScene;//要用QGraphicsView就必须要有QGraphicsScene搭配着用
+
+    if(m_Image)
+        delete m_Image;
     m_Image = new ImageWidget(&ConvertPixmap);//实例化类ImageWidget的对象m_Image，该类继承自QGraphicsItem，是自己写的类
     int nwith = ui->ImageGraphic->width();//获取界面控件Graphics View的宽度
     int nheight = ui->ImageGraphic->height();//获取界面控件Graphics View的高度
